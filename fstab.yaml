@@ -1,5 +1,5 @@
 mountpoints:
   /:
-    url: "https://author-p181011-e1900982.adobeaemcloud.com/bin/franklin.delivery/jdukeminier/universal-editor-poc/main"
+    url: "https://author-p181011-e1900982.adobeaemcloud.com/bin/franklin.delivery/jdukeminier-adobe/universal-editor-poc/main"
     type: "markup"
     suffix: ".html"
