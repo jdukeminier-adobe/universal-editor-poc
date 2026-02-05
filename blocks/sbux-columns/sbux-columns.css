@@ -19,7 +19,7 @@
 .sbux-columns.block {
   display: flex;
   flex-wrap: wrap;
-  margin: 0 -1rem; /* gutters to compensate card padding */
+  margin: 0 -1rem 35px -1rem; /* gutters to compensate card padding */
 }
 
 /* Each card: half width on desktop, full width on narrow viewports */
@@ -88,8 +88,8 @@
 
 /* Optional: alternating lateral alignment */
 .sbux-columns .sbux-column-left .sbux-column-content {
-  text-align: left;
-  align-items: flex-start;
+  text-align: center;
+  align-items: center;
 }
 
 .sbux-columns .sbux-column-right .sbux-column-content {
