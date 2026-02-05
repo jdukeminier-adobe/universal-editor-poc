@@ -258,39 +258,42 @@
     "id": "sbux-columns",
     "fields": [
       {
-        "component": "container",
-        "name": "items",
+        "component": "text",
+        "name": "name",
         "label": "SBUX Columns",
-        "itemLabel": "SBUX Column",
-        "fields": [
-          {
-            "component": "reference",
-            "name": "backgroundImage",
-            "label": "Background image",
-            "multi": false
-          },
-          {
-            "component": "text",
-            "name": "backgroundColor",
-            "label": "Background color"
-          },
-          {
-            "component": "select",
-            "name": "alignment",
-            "label": "Content alignment",
-            "options": [
-              { "name": "Left", "value": "left" },
-              { "name": "Center", "value": "center" },
-              { "name": "Right", "value": "right" }
-            ]
-          },
-          {
-            "component": "richtext",
-            "name": "content",
-            "label": "Content",
-            "valueType": "string"
-          }
+        "description": "Container for starbucks column item."
+      }
+    ]
+  },
+  {
+    "id": "sbux-column",
+    "fields": [
+      {
+        "component": "reference",
+        "name": "backgroundImage",
+        "label": "Background image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "name": "backgroundColor",
+        "label": "Background color (CSS/HEX)"
+      },
+      {
+        "component": "select",
+        "name": "alignment",
+        "label": "Content alignment",
+        "options": [
+          { "name": "Left", "value": "left" },
+          { "name": "Center", "value": "center" },
+          { "name": "Right", "value": "right" }
         ]
+      },
+      {
+        "component": "richtext",
+        "name": "content",
+        "label": "Content",
+        "valueType": "string"
       }
     ]
   }

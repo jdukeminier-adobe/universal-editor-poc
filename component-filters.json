@@ -40,5 +40,15 @@
       "title",
       "card"
     ]
+  },
+  {
+    "id": "sbux-columns",
+    "components": [
+      "sbux-column"
+    ]
+  },
+  {
+    "id": "sbux-column",
+    "components": []
   }
 ]

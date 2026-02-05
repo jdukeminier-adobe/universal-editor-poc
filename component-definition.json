@@ -178,6 +178,22 @@
               }
             }
           }
+        },
+        {
+          "title": "SBUX Column",
+          "id": "sbux-column",
+          "model": "sbux-column",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "SBUX Column",
+                  "model": "sbux-column"
+                }
+              }
+            }
+          }
         }
       ]
     }
