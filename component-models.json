@@ -232,10 +232,16 @@
     "id": "sbux-columns",
     "fields": [
       {
+        "component": "text",
+        "name": "name",
+        "label": "SBUX Columns Name",
+        "description": "Label shown in the Content Tree"
+      },
+      {
         "component": "container",
         "name": "items",
-        "label": "SBUX Columns",
-        "itemLabel": "SBUX Column",
+        "label": "Columns",
+        "itemLabel": "Column",
         "fields": [
           {
             "component": "reference",
@@ -247,16 +253,6 @@
             "component": "text",
             "name": "backgroundColor",
             "label": "Background color (CSS/HEX)"
-          },
-          {
-            "component": "select",
-            "name": "alignment",
-            "label": "Content alignment",
-            "options": [
-              { "name": "Left", "value": "left" },
-              { "name": "Center", "value": "center" },
-              { "name": "Right", "value": "right" }
-            ]
           },
           {
             "component": "richtext",

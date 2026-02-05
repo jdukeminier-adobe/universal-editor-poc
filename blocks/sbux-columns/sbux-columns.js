@@ -7,9 +7,17 @@ export default function decorate(block) {
   block.classList.add('sbux-columns');
   block.innerHTML = '';
 
-  data.items.forEach((item) => {
+  data.items.forEach((item, index) => {
     const col = document.createElement('div');
     col.classList.add('sbux-column');
+
+    // Alternating pattern: even index left, odd index right
+    // (or apply row-wise logic if you want 2-per-row strictly)
+    if (index % 2 === 0) {
+      col.classList.add('sbux-column-left');
+    } else {
+      col.classList.add('sbux-column-right');
+    }
 
     const inner = document.createElement('div');
     inner.classList.add('sbux-column-inner');
@@ -30,10 +38,6 @@ export default function decorate(block) {
     const content = document.createElement('div');
     content.classList.add('sbux-column-content');
 
-    if (item.alignment) {
-      content.classList.add(`align-${item.alignment}`);
-    }
-
     if (item.content && item.content.html) {
       content.innerHTML = item.content.html;
     }
@@ -42,6 +46,4 @@ export default function decorate(block) {
     col.appendChild(inner);
     block.appendChild(col);
   });
-
-  console.log('SBUX Columns model', data);
 }

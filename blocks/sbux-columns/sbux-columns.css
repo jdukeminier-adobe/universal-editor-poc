@@ -1,31 +1,27 @@
 .sbux-columns {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
 }
 
-/* Column wrapper */
 .sbux-column {
   position: relative;
 }
 
-/* Background + overlay container */
 .sbux-column-inner {
   position: relative;
-  min-height: 220px;              /* tweak to taste */
+  min-height: 220px;
   border-radius: 8px;
-  overflow: hidden;                /* ensure bg + content clipping */
+  overflow: hidden;
   display: flex;
   align-items: stretch;
   justify-content: stretch;
-
-  /* if using background images */
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
 }
 
-/* Optional: darken image to improve text contrast */
+/* Optional: darker overlay for images */
 .sbux-column-inner.has-bg-image::before {
   content: "";
   position: absolute;
@@ -38,35 +34,31 @@
   pointer-events: none;
 }
 
-/* Content layer */
 .sbux-column-content {
-  position: relative;              /* above ::before overlay */
+  position: relative;
   z-index: 1;
   padding: 1.5rem;
-  color: #fff;                     /* assume light text over dark bg */
+  color: #fff;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;       /* text near bottom */
+  justify-content: flex-end;
 }
 
-/* Alignment modifiers */
-.sbux-column-content.align-center {
-  text-align: center;
-  align-items: center;
+/* Alternating tweaks */
+.sbux-column-left .sbux-column-content {
+  text-align: left;
+  align-items: flex-start;
 }
 
-.sbux-column-content.align-right {
+.sbux-column-right .sbux-column-content {
   text-align: right;
   align-items: flex-end;
 }
 
-/* Compact rich text defaults */
-.sbux-column-content h1,
-.sbux-column-content h2,
-.sbux-column-content h3 {
-  margin: 0 0 0.5rem;
+/* You can also offset background focus */
+.sbux-column-left .sbux-column-inner {
+  background-position: center left;
 }
-
-.sbux-column-content p {
-  margin: 0.25rem 0;
+.sbux-column-right .sbux-column-inner {
+  background-position: center right;
 }
