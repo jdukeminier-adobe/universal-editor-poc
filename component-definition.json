@@ -164,19 +164,13 @@
       "id": "customComponents",
       "components": [
         {
-          "title": "Layout",
-          "id": "layout",
-          "components": [
-            {
-              "title": "SBUX Columns",
-              "id": "sbux-columns",
-              "model": "sbux-columns",
-              "filter": "sections",
-              "plugins": {
-                "htmlstring": "<div class=\"sbux-columns\"></div>"
-              }
-            }
-          ]
+          "title": "SBUX Columns",
+          "id": "sbux-columns",
+          "model": "sbux-columns",
+          "filter": "sections",
+          "plugins": {
+            "htmlstring": "<div class=\"sbux-columns\"></div>"
+          }
         }
       ]
     }

@@ -15,7 +15,8 @@
       "hero",
       "cards",
       "columns",
-      "fragment"
+      "fragment",
+      "sbux-columns"
     ]
   },
   {
@@ -27,8 +28,7 @@
   {
     "id": "columns",
     "components": [
-      "column",
-      "sbuxColumnCard"
+      "column"
     ]
   },
   {
@@ -40,9 +40,5 @@
       "title",
       "card"
     ]
-  },
-  {
-    "id": "sbuxColumnCard",
-    "components": []
   }
 ]

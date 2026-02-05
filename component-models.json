@@ -255,44 +255,43 @@
     ]
   },
   {
-    "overlay-columns": {
-      "title": "SBUX Columns",
-      "fields": [
-        {
-          "id": "items",
-          "label": "SBUX Columns",
-          "type": "container",
-          "itemLabel": "SBUX Column",
-          "fields": [
-            {
-              "id": "backgroundImage",
-              "label": "Background image",
-              "type": "reference",        // asset selector / reference
-              "componentType": "reference"
-            },
-            {
-              "id": "backgroundColor",
-              "label": "Background color",
-              "type": "string"
-            },
-            {
-              "id": "alignment",
-              "label": "Content alignment",
-              "type": "enum",
-              "options": [
-                { "label": "Left", "value": "left" },
-                { "label": "Center", "value": "center" },
-                { "label": "Right", "value": "right" }
-              ]
-            },
-            {
-              "id": "content",
-              "label": "Content",
-              "type": "richtext"
-            }
-          ]
-        }
-      ]
-    }
+    "id": "sbux-columns",
+    "fields": [
+      {
+        "component": "container",
+        "name": "items",
+        "label": "SBUX Columns",
+        "itemLabel": "SBUX Column",
+        "fields": [
+          {
+            "component": "reference",
+            "name": "backgroundImage",
+            "label": "Background image",
+            "multi": false
+          },
+          {
+            "component": "text",
+            "name": "backgroundColor",
+            "label": "Background color"
+          },
+          {
+            "component": "select",
+            "name": "alignment",
+            "label": "Content alignment",
+            "options": [
+              { "name": "Left", "value": "left" },
+              { "name": "Center", "value": "center" },
+              { "name": "Right", "value": "right" }
+            ]
+          },
+          {
+            "component": "richtext",
+            "name": "content",
+            "label": "Content",
+            "valueType": "string"
+          }
+        ]
+      }
+    ]
   }
 ]
