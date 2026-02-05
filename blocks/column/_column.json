@@ -24,7 +24,7 @@
           "component": "reference",
           "valueType": "string",
           "name": "backgroundImage",
-          "label": "Bakcground Image",
+          "label": "Background Image",
           "multi": false
         },
         {
