@@ -14,6 +14,12 @@ export default function decorate(block) {
       card.classList.add('sbux-column-right');
     }
 
+    // Set the background color if present
+    const bgColor = card.querySelector('div[data-aue-prop="backgroundColor"]');
+    if (bgColor) {
+      card.style.backgroundColor = bgColor;
+    }
+
     // Ensure the image is usable as a background overlay
     const img = card.querySelector('img[data-aue-prop="backgroundImage"]');
     if (img) {

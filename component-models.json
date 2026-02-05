@@ -236,31 +236,6 @@
         "name": "name",
         "label": "SBUX Columns Name",
         "description": "Label shown in the Content Tree"
-      },
-      {
-        "component": "container",
-        "name": "items",
-        "label": "Columns",
-        "itemLabel": "Column",
-        "fields": [
-          {
-            "component": "reference",
-            "name": "backgroundImage",
-            "label": "Background image",
-            "multi": false
-          },
-          {
-            "component": "text",
-            "name": "backgroundColor",
-            "label": "Background color (CSS/HEX)"
-          },
-          {
-            "component": "richtext",
-            "name": "content",
-            "label": "Content",
-            "valueType": "string"
-          }
-        ]
       }
     ]
   }

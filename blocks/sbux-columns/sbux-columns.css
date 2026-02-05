@@ -10,7 +10,10 @@
   position: relative;
   border-radius: 8px;
   overflow: hidden;
-  min-height: 220px;
+  min-height: 625px;
+  float:left;
+  width:50%;
+  border-radius: 0;
 }
 
 /* Background image fills the card */
