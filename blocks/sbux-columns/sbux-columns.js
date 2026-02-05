@@ -1,22 +1,17 @@
 export default function decorate(block) {
-  // Take a snapshot of current children; each should correspond to one SBUX Column item.
-  const itemElements = Array.from(block.children || []);
+  // Try to get the model for this SBUX Columns block
+  const data = window.getBlockModel && window.getBlockModel(block);
+  if (!data || !Array.isArray(data.items)) {
+    // Nothing to render
+    return;
+  }
 
   block.classList.add('sbux-columns');
 
-  // We will rebuild the inside of the block with our own markup
+  // Rebuild the inner content from the model
   block.innerHTML = '';
 
-  itemElements.forEach((itemEl) => {
-    // Get the model for this child item (SBUX Column)
-    const item =
-      (window.getBlockModel && window.getBlockModel(itemEl)) || null;
-
-    if (!item) {
-      // If no model is found, skip this item
-      return;
-    }
-
+  data.items.forEach((item) => {
     const col = document.createElement('div');
     col.classList.add('sbux-column');
 
@@ -46,7 +41,6 @@ export default function decorate(block) {
       content.classList.add(`align-${item.alignment}`);
     }
 
-    // Rich text content
     if (item.content && item.content.html) {
       content.innerHTML = item.content.html;
     }
@@ -55,4 +49,6 @@ export default function decorate(block) {
     col.appendChild(inner);
     block.appendChild(col);
   });
+
+  console.log('SBUX model', data);
 }
