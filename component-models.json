@@ -261,7 +261,7 @@
         "component": "text",
         "name": "name",
         "label": "SBUX Columns",
-        "description": "Container for starbucks column item."
+        "description": "Container for Starbucks column items."
       }
     ]
   },
