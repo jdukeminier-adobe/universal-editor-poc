@@ -11,10 +11,23 @@
   border-radius: 8px;
   overflow: hidden;
   min-height: 625px;
-  float:left;
-  width:50%;
   border-radius: 0;
   font-size:24px;
+}
+
+/* Container: 2 items per row, wrap remaining to new rows */
+.sbux-columns.block {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -1rem; /* gutters to compensate card padding */
+}
+
+/* Each card: half width on desktop, full width on narrow viewports */
+.sbux-columns .sbux-column-card,
+.sbux-columns div[data-aue-component="card"] {
+  box-sizing: border-box;
+  width: 50%;
+  padding: 0 1rem 2rem;
 }
 
 .sbux-columns .sbux-column-card h1, .sbux-columns .sbux-column-card h2 {
@@ -95,4 +108,12 @@
 /* Hide only the button-container that is flagged as background-color field */
 .sbux-columns .sbux-column-bgcolor-field {
   display: none !important;
+}
+
+/* On narrow screens, stack cards */
+@media (max-width: 768px) {
+  .sbux-columns .sbux-column-card,
+  .sbux-columns div[data-aue-component="card"] {
+    width: 100%;
+  }
 }
