@@ -24,7 +24,7 @@
 
 .sbux-columns .sbux-column-card a.button:any-link, .sbux-columns .sbux-column-card a.button:any-link button {
     background-color: #ffffff;
-    color: hsl(var(--colorGreenAccentHsl)/90%)
+    color: hsl(var(158 100% 23%)/90%)
 }
 
 .sbux-columns .sbux-column-card a.button:any-link:hover, .sbux-columns .sbux-column-card a.button:any-link button:hover {
