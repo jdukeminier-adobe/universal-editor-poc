@@ -5,41 +5,51 @@ export default function decorate(block) {
   cards.forEach((card, index) => {
     card.classList.add('sbux-column-card');
 
-    // Alternating alignment (optional)
+    // Optional alternating alignment
     if (index % 2 === 0) {
       card.classList.add('sbux-column-left');
     } else {
       card.classList.add('sbux-column-right');
     }
 
-    // Get the model for this card, if available
-    const model =
-      (window.getBlockModel && window.getBlockModel(card)) || null;
+    // Find all "button" anchors inside this card
+    const buttons = card.querySelectorAll('.button-container a.button');
 
-    if (model && model.backgroundColor) {
-      // Apply backgroundColor as inline style on the card
-      card.style.backgroundColor = model.backgroundColor;
-      card.classList.add('has-bg-color');
-    }
+    buttons.forEach((btn) => {
+      const href = (btn.getAttribute('href') || '').trim();
+      const text = (btn.textContent || '').trim();
 
-    // Ensure background image is treated as overlay
+      // Simple hex color detector: href like #006241, #fff, #FFFFFFFF, etc.
+      const looksLikeColor = /^#[0-9A-Fa-f]{3,8}$/.test(href) ||
+                             /^#[0-9A-Fa-f]{3,8}$/.test(text);
+
+      if (looksLikeColor) {
+        const color = href || text;
+
+        // Apply background color to card
+        card.style.backgroundColor = color;
+        card.classList.add('has-bg-color');
+
+        // Hide ONLY this button-container, not other buttons
+        const buttonWrapper = btn.closest('.button-container');
+        if (buttonWrapper) {
+          buttonWrapper.classList.add('sbux-column-bgcolor-field');
+        }
+      }
+      // If it's not a color, it's likely a real CTA (e.g., Learn more)
+      // -> do nothing, leave it visible
+    });
+
+    // Background image overlay
     const img = card.querySelector('img[data-aue-prop="backgroundImage"]');
     if (img) {
       img.classList.add('sbux-column-bg-image');
     }
 
-    // Mark the text wrapper so we can style as overlay content
+    // Text overlay
     const textWrapper = card.querySelector('div[data-aue-prop="text"]');
     if (textWrapper) {
       textWrapper.classList.add('sbux-column-content');
-    }
-
-    // Hide any visible element UE renders for backgroundColor
-    const bgColorField = card.querySelector(
-      '[data-aue-prop="backgroundColor"]'
-    );
-    if (bgColorField) {
-      bgColorField.classList.add('sbux-column-bgcolor-field');
     }
   });
 }
