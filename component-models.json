@@ -193,7 +193,7 @@
     ]
   },
   {
-    "id": "column",
+    "id": "sbuxColumnCard",
     "fields": [
       {
         "component": "text",
@@ -209,6 +209,13 @@
         "label": "Background Image",
         "multi": false
       },
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Text",
+        "valueType": "string"
+      }
     ]
   },
   {
