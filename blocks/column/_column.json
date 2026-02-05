@@ -1,0 +1,41 @@
+{
+  "definitions": [
+    {
+      "title": "Column",
+      "id": "column",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/column",
+            "template": {
+              "name": "Column",
+              "model": "column"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "column",
+      "fields": [
+        {
+          "component": "reference",
+          "valueType": "string",
+          "name": "backgroundImage",
+          "label": "Bakcground Image",
+          "multi": false
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "backgroundColor",
+          "label": "Background Hex Color",
+          "value": ""
+        }
+      ]
+    }
+  ],
+  "filters": []
+}
