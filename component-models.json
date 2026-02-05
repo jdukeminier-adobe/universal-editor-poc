@@ -253,5 +253,46 @@
         "valueType": "string"
       }
     ]
+  },
+  {
+    "overlay-columns": {
+      "title": "SBUX Columns",
+      "fields": [
+        {
+          "id": "items",
+          "label": "SBUX Columns",
+          "type": "container",
+          "itemLabel": "SBUX Column",
+          "fields": [
+            {
+              "id": "backgroundImage",
+              "label": "Background image",
+              "type": "reference",        // asset selector / reference
+              "componentType": "reference"
+            },
+            {
+              "id": "backgroundColor",
+              "label": "Background color",
+              "type": "string"
+            },
+            {
+              "id": "alignment",
+              "label": "Content alignment",
+              "type": "enum",
+              "options": [
+                { "label": "Left", "value": "left" },
+                { "label": "Center", "value": "center" },
+                { "label": "Right", "value": "right" }
+              ]
+            },
+            {
+              "id": "content",
+              "label": "Content",
+              "type": "richtext"
+            }
+          ]
+        }
+      ]
+    }
   }
 ]

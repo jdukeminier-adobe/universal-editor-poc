@@ -1,0 +1,72 @@
+.sbux-columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Column wrapper */
+.sbux-column {
+  position: relative;
+}
+
+/* Background + overlay container */
+.sbux-column-inner {
+  position: relative;
+  min-height: 220px;              /* tweak to taste */
+  border-radius: 8px;
+  overflow: hidden;                /* ensure bg + content clipping */
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
+
+  /* if using background images */
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+/* Optional: darken image to improve text contrast */
+.sbux-column-inner.has-bg-image::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0.6)
+  );
+  pointer-events: none;
+}
+
+/* Content layer */
+.sbux-column-content {
+  position: relative;              /* above ::before overlay */
+  z-index: 1;
+  padding: 1.5rem;
+  color: #fff;                     /* assume light text over dark bg */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;       /* text near bottom */
+}
+
+/* Alignment modifiers */
+.sbux-column-content.align-center {
+  text-align: center;
+  align-items: center;
+}
+
+.sbux-column-content.align-right {
+  text-align: right;
+  align-items: flex-end;
+}
+
+/* Compact rich text defaults */
+.sbux-column-content h1,
+.sbux-column-content h2,
+.sbux-column-content h3 {
+  margin: 0 0 0.5rem;
+}
+
+.sbux-column-content p {
+  margin: 0.25rem 0;
+}
