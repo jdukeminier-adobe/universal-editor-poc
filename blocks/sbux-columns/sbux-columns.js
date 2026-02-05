@@ -1,49 +1,29 @@
 export default function decorate(block) {
-  const data = window.getBlockModel && window.getBlockModel(block);
-  if (!data || !Array.isArray(data.items)) {
-    return;
-  }
-
+  // Mark the block as an SBUX Columns container
   block.classList.add('sbux-columns');
-  block.innerHTML = '';
 
-  data.items.forEach((item, index) => {
-    const col = document.createElement('div');
-    col.classList.add('sbux-column');
+  // All direct child cards act as column items
+  const cards = block.querySelectorAll('div[data-aue-component="card"]');
+  cards.forEach((card, index) => {
+    card.classList.add('sbux-column-card');
 
-    // Alternating pattern: even index left, odd index right
-    // (or apply row-wise logic if you want 2-per-row strictly)
+    // Optional: alternating alignment class, if you want
     if (index % 2 === 0) {
-      col.classList.add('sbux-column-left');
+      card.classList.add('sbux-column-left');
     } else {
-      col.classList.add('sbux-column-right');
+      card.classList.add('sbux-column-right');
     }
 
-    const inner = document.createElement('div');
-    inner.classList.add('sbux-column-inner');
-
-    const imgSrc =
-      (item.backgroundImage && (item.backgroundImage.src || item.backgroundImage.path)) ||
-      null;
-    if (imgSrc) {
-      inner.style.backgroundImage = `url("${imgSrc}")`;
-      inner.classList.add('has-bg-image');
+    // Ensure the image is usable as a background overlay
+    const img = card.querySelector('img[data-aue-prop="backgroundImage"]');
+    if (img) {
+      img.classList.add('sbux-column-bg-image');
     }
 
-    if (item.backgroundColor) {
-      inner.style.backgroundColor = item.backgroundColor;
-      inner.classList.add('has-bg-color');
+    // Mark the text wrapper so we can style it as overlay content
+    const textWrapper = card.querySelector('div[data-aue-prop="text"]');
+    if (textWrapper) {
+      textWrapper.classList.add('sbux-column-content');
     }
-
-    const content = document.createElement('div');
-    content.classList.add('sbux-column-content');
-
-    if (item.content && item.content.html) {
-      content.innerHTML = item.content.html;
-    }
-
-    inner.appendChild(content);
-    col.appendChild(inner);
-    block.appendChild(col);
   });
 }

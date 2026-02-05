@@ -1,28 +1,30 @@
-.sbux-columns {
+* Container behaves as a responsive grid */
+.sbux-columns.block {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
 }
 
-.sbux-column {
+/* Each card is a column */
+.sbux-columns .sbux-column-card {
   position: relative;
-}
-
-.sbux-column-inner {
-  position: relative;
-  min-height: 220px;
   border-radius: 8px;
   overflow: hidden;
-  display: flex;
-  align-items: stretch;
-  justify-content: stretch;
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
+  min-height: 220px;
 }
 
-/* Optional: darker overlay for images */
-.sbux-column-inner.has-bg-image::before {
+/* Background image fills the card */
+.sbux-columns .sbux-column-bg-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* Dark overlay over the image to improve text contrast */
+.sbux-columns .sbux-column-card::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -32,9 +34,11 @@
     rgba(0, 0, 0, 0.6)
   );
   pointer-events: none;
+  z-index: 0;
 }
 
-.sbux-column-content {
+/* Text overlay */
+.sbux-columns .sbux-column-content {
   position: relative;
   z-index: 1;
   padding: 1.5rem;
@@ -42,23 +46,24 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  min-height: 220px; /* matches card height */
 }
 
-/* Alternating tweaks */
-.sbux-column-left .sbux-column-content {
+/* Optional: alternating lateral alignment */
+.sbux-columns .sbux-column-left .sbux-column-content {
   text-align: left;
   align-items: flex-start;
 }
 
-.sbux-column-right .sbux-column-content {
+.sbux-columns .sbux-column-right .sbux-column-content {
   text-align: right;
   align-items: flex-end;
 }
 
-/* You can also offset background focus */
-.sbux-column-left .sbux-column-inner {
-  background-position: center left;
+/* Tidy richtext inside cards */
+.sbux-columns .sbux-column-content p {
+  margin: 0.25rem 0;
 }
-.sbux-column-right .sbux-column-inner {
-  background-position: center right;
+.sbux-columns .sbux-column-content p:first-child {
+  margin-top: 0;
 }
