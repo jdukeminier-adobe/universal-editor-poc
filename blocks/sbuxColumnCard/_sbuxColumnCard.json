@@ -1,15 +1,15 @@
 {
   "definitions": [
     {
-      "title": "Column",
-      "id": "column",
+      "title": "SBUX Column Card",
+      "id": "sbuxColumnCard",
       "plugins": {
         "xwalk": {
           "page": {
             "resourceType": "core/franklin/components/block/v1/block",
             "template": {
-              "name": "Column",
-              "model": "column"
+              "name": "SBUX Column Card",
+              "model": "sbuxColumnCard"
             }
           }
         }
@@ -18,7 +18,7 @@
   ],
   "models": [
     {
-      "id": "column",
+      "id": "sbuxColumnCard",
       "fields": [
         {
           "component": "reference",
@@ -33,6 +33,13 @@
           "name": "backgroundColor",
           "label": "Background Hex Color",
           "value": ""
+        },
+        {
+          "component": "richtext",
+          "name": "text",
+          "value": "",
+          "label": "Text",
+          "valueType": "string"
         }
       ]
     }
