@@ -27,7 +27,8 @@
   {
     "id": "columns",
     "components": [
-      "column"
+      "column",
+      "sbuxColumnCard"
     ]
   },
   {
@@ -39,5 +40,9 @@
       "title",
       "card"
     ]
+  },
+  {
+    "id": "sbuxColumnCard",
+    "components": []
   }
 ]
