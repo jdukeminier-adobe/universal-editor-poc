@@ -192,6 +192,25 @@
       }
     ]
   },
+    {
+    "id": "column",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "backgroundColor",
+        "value": "",
+        "label": "Background Hex Color"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "backgroundImage",
+        "label": "Background Image",
+        "multi": false
+      },
+    ]
+  },
   {
     "id": "fragment",
     "fields": [
