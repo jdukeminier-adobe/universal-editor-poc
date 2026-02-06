@@ -1,7 +1,9 @@
 .sbux-columns.block {
-  display: grid;
+  display: flex;
+  flex-wrap: wrap;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
+  margin: 0 -1rem 35px;
 }
 
 .sbux-columns .sbux-column-card {
@@ -12,11 +14,7 @@
   font-size:24px;
 }
 
-.sbux-columns.block {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0 -1rem 35px;
-}
+
 
 .sbux-columns .sbux-column-card,
 .sbux-columns div[data-aue-component="card"] {
