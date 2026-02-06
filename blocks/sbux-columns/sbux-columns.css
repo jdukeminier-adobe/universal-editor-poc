@@ -5,7 +5,6 @@
   gap: 2rem;
 }
 
-/* Each card is a column */
 .sbux-columns .sbux-column-card {
   position: relative;
   border-radius: 8px;
@@ -15,14 +14,12 @@
   font-size:24px;
 }
 
-/* Container: 2 items per row, wrap remaining to new rows */
 .sbux-columns.block {
   display: flex;
   flex-wrap: wrap;
-  margin: 0 -1rem 35px -1rem; /* gutters to compensate card padding */
+  margin: 0 -1rem 35px -1rem;
 }
 
-/* Each card: half width on desktop, full width on narrow viewports */
 .sbux-columns .sbux-column-card,
 .sbux-columns div[data-aue-component="card"] {
   box-sizing: border-box;
@@ -50,7 +47,6 @@
     border-color: rgba(255,255,255,.8);
 }
 
-/* Background image fills the card */
 .sbux-columns .sbux-column-bg-image {
   position: absolute;
   inset: 0;
@@ -60,21 +56,16 @@
   z-index: 0;
 }
 
-/* Dark overlay over the image to improve text contrast */
 .sbux-columns .sbux-column-card::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.2),
-    rgba(0, 0, 0, 0.6)
+  background: linear-gradient(to bottom,rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.6)
   );
   pointer-events: none;
   z-index: 0;
 }
 
-/* Text overlay */
 .sbux-columns .sbux-column-content {
   position: relative;
   z-index: 1;
@@ -83,10 +74,9 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  min-height: 220px; /* matches card height */
+  min-height: 220px; 
 }
 
-/* Optional: alternating lateral alignment */
 .sbux-columns .sbux-column-left .sbux-column-content {
   text-align: center;
   align-items: center;
@@ -97,7 +87,6 @@
   align-items: center;
 }
 
-/* Tidy richtext inside cards */
 .sbux-columns .sbux-column-content p {
   margin: 0.25rem 0;
 }
@@ -105,12 +94,10 @@
   margin-top: 0;
 }
 
-/* Hide only the button-container that is flagged as background-color field */
 .sbux-columns .sbux-column-bgcolor-field {
   display: none !important;
 }
 
-/* On narrow screens, stack cards */
 @media (max-width: 768px) {
   .sbux-columns .sbux-column-card,
   .sbux-columns div[data-aue-component="card"] {
