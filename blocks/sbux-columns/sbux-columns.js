@@ -20,8 +20,7 @@ export default function decorate(block) {
       const text = (btn.textContent || '').trim();
 
       // Simple hex color detector: href like #006241, #fff, #FFFFFFFF, etc.
-      const looksLikeColor = /^#[0-9A-Fa-f]{3,8}$/.test(href) ||
-                             /^#[0-9A-Fa-f]{3,8}$/.test(text);
+      const looksLikeColor = /^#[0-9A-Fa-f]{3,8}$/.test(href) || /^#[0-9A-Fa-f]{3,8}$/.test(text);
 
       if (looksLikeColor) {
         const color = href || text;
