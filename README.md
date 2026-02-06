@@ -1,9 +1,9 @@
-# Your Project's Title...
+# Universal Editor POC
 Your project's description...
 
 ## Environments
-- Preview: https://main--{repo}--{owner}.aem.page/
-- Live: https://main--{repo}--{owner}.aem.live/
+- Preview: https://main--universal-editor-poc--jdukeminier-adobe.aem.page
+- Live: https://main--universal-editor-poc--jdukeminier-adobe.aem.live
 
 ## Documentation
 
