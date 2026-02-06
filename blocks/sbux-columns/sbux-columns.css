@@ -1,7 +1,6 @@
 .sbux-columns.block {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
+  display: flex;
+  flex-wrap: wrap;
   margin: 0 -1rem 35px;
 }
 
